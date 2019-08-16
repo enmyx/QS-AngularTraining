@@ -1,0 +1,26 @@
+<ng-container *ngIf="car">
+    <div class="container">
+        <h1>Hero Form</h1>
+        <form #balazsForm="ngForm" (ngSubmit)="saveCar()">
+            <div class="form-group">
+                <label for="id">Id</label>
+                <input [(ngModel)]="car.id" type="text" class="form-control" id="id" name="id" required>
+            </div>
+
+            <div class="form-group">
+                <label for="brand">Brand</label>
+                <input [(ngModel)]="car.brand" type="text" class="form-control" id="brand" name="brand" required 
+                pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" maxlength="20">
+            </div>
+
+            <div class="form-group">
+                <label for="manufactured">Manufactured</label>
+                <input [(ngModel)]="car.manufactured" type="text" class="form-control" id="manufactured"
+                    name="manufactured" required maxlength="4">
+            </div>
+
+            <button type="submit" [disabled]="balazsForm.invalid" class="btn btn-success">Submit</button>
+
+        </form>
+    </div>
+</ng-container>

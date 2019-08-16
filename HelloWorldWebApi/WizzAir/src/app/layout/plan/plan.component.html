@@ -1,0 +1,27 @@
+<ngb-carousel class="no-outline">
+    <ng-template ngbSlide *ngFor="let page of pages; index as i">
+        <div class="picsum-img-wrapper text-center bg-dark w-auto h-300px">
+            <img [src]="page.image" alt="page.imageAlt" (load)=imageLoaded() class="w-100">
+        </div>
+        <div class="carousel-caption">
+            <h3>{{page.title}} - {{i}}</h3>
+            <p>{{page.detail}}</p>
+        </div>
+    </ng-template>
+</ngb-carousel>
+
+<p-card class="wizz-card">
+    Book a hotel:
+
+    <div>
+        <input type="text" pInputText [(ngModel)]="destination" placeholder="City" class="mb-3">
+
+        <div class="mb-3">
+            <p-calendar [(ngModel)]="checkinDate" [showIcon]="true"></p-calendar>
+        </div>
+
+        <div>
+            <p-calendar [(ngModel)]="checkoutDate" [showIcon]="true"></p-calendar>
+        </div>
+    </div>
+</p-card>

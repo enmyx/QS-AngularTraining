@@ -1,0 +1,8 @@
+<p>photon works!</p>
+
+{{currentId}}
+
+<ul>
+    <li *ngFor="let car of cars; let i = index;" [ngClass]="{'even': i%2===1}">{{car.brand}} {{car.manufactured}}</li>
+</ul>
+<router-outlet></router-outlet>

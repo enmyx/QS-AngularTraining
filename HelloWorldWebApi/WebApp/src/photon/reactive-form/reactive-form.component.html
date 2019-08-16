@@ -1,0 +1,24 @@
+<div class="container">
+    <form [formGroup]="carForm">
+        <div class="form-group">
+            <label class="mr-sm-2">
+                Id:
+            </label>
+            <input type="text" formControlName="id" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="mr-sm-2">
+                Brand:
+            </label>
+            <input type="text" formControlName="brand" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="mr-sm-2">
+                Manufactured:
+            </label>
+            <input type="text" formControlName="manufactured" class="form-control">
+        </div>
+
+        <button type="submit" [disabled]="carForm.invalid" class="btn btn-success">Submit</button>
+    </form>
+</div>
